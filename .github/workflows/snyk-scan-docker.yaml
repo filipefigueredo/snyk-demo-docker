@@ -30,7 +30,7 @@ jobs:
     env:
       IMAGE_NAME: ${{ github.repository }}
       IMAGE_TAG: ${{ inputs.image_tag }}
-      CONTAINER_REGISTRY_NAME: 'ghcr.io'
+      CONTAINER_REGISTRY_NAME: "ghcr.io"
       SNYK_TOKEN: ${{ secrets.SNYK_API_TOKEN }}
 
     defaults:
@@ -57,15 +57,14 @@ jobs:
           registry: ${{ env.CONTAINER_REGISTRY_NAME }}
           username: ${{ github.actor }}
           password: ${{ github.token }}
-        
+
       - name: Container image pull
         run: docker image pull ${{ steps.lowercase.outputs.container_image_name }}
 
       - name: Run Snyk test
         run: |
-          snyk container test \
+          snyk container test ${{ steps.lowercase.outputs.container_image_name }} \
             --file=Dockerfile
             --app-vulns \
             --severity-threshold=${{ inputs.snyk-severity-threshold }} \
-            --sarif-file-output=snyk.sarif \
-            ${{ steps.lowercase.outputs.container_image_name }}
+            --sarif-file-output=snyk.sarif
