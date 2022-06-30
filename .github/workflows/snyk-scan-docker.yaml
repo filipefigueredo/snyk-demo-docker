@@ -67,4 +67,5 @@ jobs:
             --file=Dockerfile
             --app-vulns \
             --severity-threshold=${{ inputs.snyk-severity-threshold }} \
-            --sarif-file-output=snyk.sarif
+            --sarif-file-output=snyk.sarif \
+            ${{ steps.lowercase.outputs.container_image_name }}
