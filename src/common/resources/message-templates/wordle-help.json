@@ -1,0 +1,64 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": ":alphabet-yellow-h:elp",
+        "emoji": true
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "plain_text",
+        "text": "To play the game, simply write the guess word with the according letters.\n\n:point_right:All words have six letters.\n\nYou will get a reply letting you know which letters you:\n:large_green_square: have correct are in the right position\n:large_red_square: letter exists but not in correct position\n:black_square: the letter doesn't exist in the word (no colour change)\n\nSend another guess word until you have guessed the daily word.\n\n:point_right: Every day you get a new word.\n\n:point_right: On Friday you will get the overall results.",
+        "emoji": true
+      }
+    },
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": ":alphabet-yellow-p:oint attribution",
+        "emoji": true
+      }
+    },
+    {
+      "type": "section",
+      "fields": [
+        {
+          "type": "mrkdwn",
+          "text": "*600* First guess word"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*500* Second guess word"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*400* Third guess word"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*300* Forth guess word"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*200* Fith guess word"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*100* Sixth guess word"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*10* points for each correct letter when failing on the full word guess."
+      }
+    }
+  ]
+}

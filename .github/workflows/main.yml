@@ -1,0 +1,12 @@
+name: Snyk Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  snyk-scan-docker:
+    name: Snyk Scan - Docker
+    uses: ./.github/workflows/snyk-scan-docker.yaml
+    secrets: inherit
+    with:
+      container_image_tag: '1.0.0'

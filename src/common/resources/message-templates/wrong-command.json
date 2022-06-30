@@ -1,0 +1,26 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": ":alphabet-yellow-T:oo bad! :confused::confused::confused:",
+        "emoji": true
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "Game Center has no command named"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "To see all *Game Center* commands, please run: `/game help`"
+      }
+    }
+  ]
+}

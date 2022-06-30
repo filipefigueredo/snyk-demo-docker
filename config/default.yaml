@@ -1,0 +1,8 @@
+server:
+  hostname: localhost
+  port: 10100
+connection:
+  timeout: 30000
+app:
+  debugModeEnabled: 'true'
+  eventsEndpoint: '/slack/events'

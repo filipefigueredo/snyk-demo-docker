@@ -1,0 +1,11 @@
+name: Build container image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  pack-container-image:
+    name: Create container image
+    uses: ./.github/workflows/pack-container-image.yaml
+    with:
+      container_image_tag: "1.0.0"

@@ -1,0 +1,33 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "Game Center\n*<nmbrs.com|hackathon_2022_team1>*"
+      },
+      "accessory": {
+        "type": "button",
+        "text": {
+          "type": "plain_text",
+          "text": "Help",
+          "emoji": true
+        },
+        "value": "click_me_123",
+        "action_id": "help_button_welcome"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Type:*\n\nWordle Puzzle Game\n\nThe game has started, good luck."
+      },
+      "accessory": {
+        "type": "image",
+        "image_url": "http://s1.bwallpapers.com/wallpapers/2014/03/03/big-wave_015223248.jpg",
+        "alt_text": "Game Center"
+      }
+    }
+  ]
+}

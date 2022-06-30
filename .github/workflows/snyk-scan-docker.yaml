@@ -1,0 +1,70 @@
+name: "Snyk security scan"
+
+on:
+  workflow_call:
+    inputs:
+      container_image_tag:
+        description: "Container image tag"
+        required: false
+        type: string
+        default: latest
+      snyk-severity-threshold:
+        # valid options: low, medium, high and critical
+        description: Report only vulnerabilities at the specified level or higher.
+        required: false
+        type: string
+        default: "high"
+      target-directory:
+        description: "Target working directory"
+        required: false
+        type: string
+        default: "."
+
+jobs:
+  docker-scan:
+    name: Scan docker image
+    runs-on:
+      - self-hosted
+      - linux
+
+    env:
+      IMAGE_NAME: ${{ github.repository }}
+      IMAGE_TAG: ${{ inputs.image_tag }}
+      CONTAINER_REGISTRY_NAME: 'ghcr.io'
+      SNYK_TOKEN: ${{ secrets.SNYK_API_TOKEN }}
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ inputs.target-directory }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup / Install Snyk CLI
+        uses: snyk/actions/setup@master
+
+      - name: Parse container image name
+        id: lowercase
+        run: |
+          parsed_string=$(echo "${{ env.CONTAINER_REGISTRY_NAME }}/${{github.repository_owner}}/${{ github.event.repository.name }}:${{ inputs.container_image_tag }}" | tr '[:upper:]' '[:lower:]')
+          echo "::set-output name=container_image_name::$parsed_string"
+
+      - name: Login to container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.CONTAINER_REGISTRY_NAME }}
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+        
+      - name: Container image pull
+        run: docker image pull ${{ steps.lowercase.outputs.container_image_name }}
+
+      - name: Run Snyk test
+        run: |
+          snyk container test \
+            --file=Dockerfile
+            --app-vulns \
+            --severity-threshold=${{ inputs.snyk-severity-threshold }} \
+            --sarif-file-output=snyk.sarif

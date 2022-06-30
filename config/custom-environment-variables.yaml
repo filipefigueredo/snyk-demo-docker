@@ -1,0 +1,16 @@
+server:
+  port: NODE_PORT
+app:
+  debugModeEnabled: NODE_APP_DEBUG_MODE_ENABLE
+  eventsEndpoint: NODE_APP_EVENTS_ENDPOINT
+  slashCommandPattern: NODE_APP_SLASH_COMMAND_PATTERN
+slack:
+  signingSecret: NODE_SLACK_SIGNING_SECRET
+  botOAuthToken: NODE_SLACK_BOT_OAUTH_TOKEN
+slackApi:
+  postMessageEndpoint: NODE_SLACK_POST_MESSAGE_ENDPOINT
+github:
+  personalAccessToken: NODE_GITHUB_PAT
+  provisionWorkflowUrl: NODE_GITHUB_API_PROVISION_WORKFLOW_URL
+  destroyWorkflowUrl: NODE_GITHUB_API_DESTROY_WORKFLOW_URL
+  workflowRunnerUrl: NODE_GITHUB_API_WORKFLOW_RUNNER_URL

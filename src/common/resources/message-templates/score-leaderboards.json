@@ -1,0 +1,24 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": ":trophy: Greatest players... so far :popcorn:",
+        "emoji": true
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": ":joystick: <Player_Name> : <Player_Points> pts\n:joystick: <Player_Name> : <Player_Points> pts\n:joystick: <Player_Name> : <Player_Points> pts"
+        }
+      ]
+    }
+  ]
+}

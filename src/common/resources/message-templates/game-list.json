@@ -1,0 +1,44 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "Hello, game center here! :wave::wave::wave: \n\n *Please select a game:*"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Wordle*\n\nThe rules are very simple: You need to guess the hidden word in 6 tries. To get started, just type any word on the first line. If the letter is guessed correctly and is in the correct place, it will be highlighted in green, if the letter is in the word, but in the wrong place in red, and if the letter is not in the word, it will remain gray. Can you guess the hidden word in 6 tries?"
+      },
+      "accessory": {
+        "type": "image",
+        "image_url": "https://maintion.com/wp-content/uploads/2022/03/wordle-logo-pics-2-958x575.png",
+        "alt_text": "alt text for image"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Wordle",
+            "emoji": true
+          },
+          "value": "action_value",
+          "action_id": "button_wordle_start"
+        }
+      ]
+    }
+  ]
+}
