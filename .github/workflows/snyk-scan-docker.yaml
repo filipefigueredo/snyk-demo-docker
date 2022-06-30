@@ -64,7 +64,7 @@ jobs:
       - name: Run Snyk test
         run: |
           snyk container test ${{ steps.lowercase.outputs.container_image_name }} \
-            --file=Dockerfile
+            --file=Dockerfile \
             --app-vulns \
             --severity-threshold=${{ inputs.snyk-severity-threshold }} \
             --sarif-file-output=snyk.sarif
